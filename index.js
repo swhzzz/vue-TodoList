@@ -1,4 +1,4 @@
-import './css/index.css'
+// import './css/index.css'
 import Vue from 'vue'
 import AV from 'leancloud-storage'
 
