@@ -6,7 +6,8 @@ a {
     color: inherit;
 }
 
-[v-cloak] {
+[v-cloak],
+.v-cloak--hidden {
     display: none;
 }
 
