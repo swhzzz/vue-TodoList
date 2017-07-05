@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue TodoList</title>
+    <link rel="shortcut icon" href="img/logo_vuejs.png">
+    <link rel="stylesheet" href="font/iconfont.css">
+    <script src='./dist/bundle.js' defer></script>
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <div v-if="!currentUser">
+            <div class="circleWrap">
+                <div class="firstCircle"></div>
+                <div class="secondCircle"></div>
+                <div class="thirdCircle"></div>
+            </div>
+        </div>
+        <div v-if="!currentUser">
+            <div class="signupTitle" v-if="actionType=='signup'">注册TodoList</div>
+            <div class="signupTitle" v-else>登录TodoList</div>
+        </div>
+        <section id="signupAndLogin" v-if="!currentUser">
+            <div class="signupOrLogIn">
+                <div class="clearfix">
+                    <label>
+                    注册<input class="signup" type="radio" value="signup" name="type" @click="toLeft"  v-model="actionType" >
+                </label>
+                    <label>
+                    登录<input class="login" type="radio" value="login" name="type" @click="toRight" v-model="actionType">
+                </label>
+                </div>
+            </div>
+            <div class="signup" v-if="actionType=='signup'">
+                <form @submit.prevent="signUp">
+                    <div class="inputCenter">
+                        <label>
+                            <input  placeholder="用户名" type="text" v-model="formData.username" ></label>
+                    </div>
+                    <div class="inputCenter">
+                        <label>
+                            <input  placeholder="密码" type="password" v-model="formData.password"></label>
+                    </div>
+                    <div class="signupBtnWrap">
+                        <button type="submit" value="signup">注册</button>
+                    </div>
+                </form>
+            </div>
+            <div class="login" v-if="actionType=='login'">
+                <form @submit.prevent="logIn">
+                    <div class="inputCenter">
+                        <label>
+                            <input class="formRow" placeholder="用户名" type="text" v-model="formData.username" autocomplete="off"></label>
+                    </div>
+                    <div class="inputCenter">
+                        <label>
+                            <input class="formRow" placeholder="密码" type="password" v-model="formData.password" autocomplete="off"></label>
+                    </div>
+                    <div class="loginBtnWrap">
+                        <button type="submit" value="login">登录</button>
+                    </div>
+                </form>
+            </div>
+            <div class="line" v-bind:class="classObject"></div>
+        </section>
+
+        <section id="todo" v-if="currentUser">
+            <h3 class="welcome">欢迎，{{currentUser.username}}</h3>
+            <button class="logout" @click="logout">退出</button>
+            <div class="planTodo">
+                <input placeholder="请输入待办事项" type="text" v-model="newtodo" @keypress.enter="addTodo">
+            </div>
+            <ol class="todos">
+                <li v-for="todo in todoList">
+                    <input type="checkbox" v-model="todo.isDone">&nbsp;&nbsp;
+                    <span v-bind:class="{done: todo.isDone}">{{todo.text}}</span>
+                    <div class="time" v-bind:class="{done: todo.isDone}">
+                        <span>{{todo.createTime}}</span>
+                    </div>
+                    <!--<div class="isdone">
+                        <span v-if="todo.isDone">已完成</span>
+                        <span v-else>未完成</span>
+                    </div>-->
+                    <button class="close iconfont icon-delet" @click="del(todo)"></button>
+                </li>
+            </ol>
+
+        </section>
+    </div>
+</body>
+
+</html>

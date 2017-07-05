@@ -1,0 +1,266 @@
+* {
+    margin: 0;
+}
+
+a {
+    color: inherit;
+}
+
+[v-cloak] {
+    display: none;
+}
+
+button {
+    outline: 0;
+    border-style: none;
+    cursor: pointer;
+}
+
+input {
+    outline: 0;
+}
+
+.clearfix:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+::-webkit-input-placeholder {
+    color: rgb(182, 155, 255);
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-size: 18px;
+    color: rgb(245, 189, 215);
+    background: linear-gradient(to bottom right, rgb(158, 247, 255), rgb(185, 165, 255))
+}
+
+#app {
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    transform: translateX(-50%);
+    width: 360px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 5px 10px #afb1b0;
+}
+
+.circleWrap {
+    position: absolute;
+    width: 360px;
+    height: 120px;
+    overflow: hidden;
+}
+
+.firstCircle {
+    position: absolute;
+    left: -80px;
+    top: -80px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgb(185, 250, 251), rgb(106, 226, 240))
+}
+
+.secondCircle {
+    position: absolute;
+    left: 80px;
+    top: -50px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(to right, rgb(202, 190, 255), rgb(176, 149, 255))
+}
+
+.thirdCircle {
+    position: absolute;
+    right: -70px;
+    top: -70px;
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgb(245, 189, 215), rgb(243, 195, 221))
+}
+
+.signupTitle {
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translateX(-50%);
+}
+
+#signupAndLogin {
+    margin-top: 220px;
+}
+
+#signupAndLogin form>div>label>input {
+    width: 200px;
+}
+
+.inputCenter {
+    text-align: center;
+}
+
+.signupOrLogIn {
+    margin-bottom: 20px;
+}
+
+.signupOrLogIn div:first-of-type {
+    text-align: center;
+}
+
+.signupOrLogIn div>label {
+    display: block;
+    float: left;
+    width: 50%;
+}
+
+.signup,
+.login {
+    margin-top: 30px;
+}
+
+.signup label {
+    margin-bottom: 20px;
+}
+
+.signup label,
+.login label {
+    margin-left: 20px;
+}
+
+.signup label>input,
+.login label>input {
+    color: rgb(244, 192, 218);
+    border: none;
+    border-bottom: 1px solid rgb(112, 169, 255);
+}
+
+.signupOrLogIn label {
+    cursor: pointer;
+}
+
+.signupOrLogIn input[type="radio"] {
+    visibility: hidden;
+}
+
+.signupBtnWrap,
+.loginBtnWrap {
+    text-align: center;
+}
+
+.signupBtnWrap>button,
+.loginBtnWrap>button {
+    font-size: 18px;
+    width: 170px;
+    height: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    transition: all .5s;
+    color: rgb(112, 169, 255);
+    background-color: #fff;
+    border: 1px solid rgb(112, 169, 255);
+    border-radius: 7px;
+}
+
+.signupBtnWrap>button:hover,
+.loginBtnWrap>button:hover {
+    color: #fff;
+    background-color: rgb(112, 169, 255);
+}
+
+.line {
+    position: absolute;
+    left: 0px;
+    bottom: 165px;
+    height: 1px;
+    width: 180px;
+    background-color: rgb(184, 162, 255);
+    transition: all .3s;
+}
+
+.toLeft {
+    left: 0;
+}
+
+.toRight {
+    left: 50%;
+}
+
+#todo {
+    position: relative;
+}
+
+.planTodo {
+    margin-bottom: 10px;
+}
+
+.planTodo>input {
+    font-size: 18px;
+    padding: 10px 0 5px 0;
+    color: rgb(182, 155, 255);
+    width: 350px;
+    border: none;
+}
+
+.todos {
+    position: absolute;
+    top: 50px;
+    left: -16px;
+    height: 400px;
+    color: rgb(112, 169, 255);
+    overflow-y: scroll;
+}
+
+.todos>li {
+    position: relative;
+    width: 330px;
+}
+
+.done {
+    text-decoration: line-through;
+    color: rgb(217, 217, 217);
+    text-decoration-color: rgb(217, 217, 217);
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    right: -10px;
+    cursor: pointer;
+    font-size: 40px;
+    color: #ff0031;
+    background-color: inherit;
+}
+
+.welcome {
+    position: absolute;
+    left: 0;
+    top: -34px;
+    color: rgb(182, 155, 255);
+}
+
+.logout {
+    position: absolute;
+    right: 0;
+    top: -30px;
+    border-radius: 5px;
+    background-color: rgb(182, 155, 255);
+    border: 1px solid #fff;
+    color: #fff;
+    transition: all .5s;
+}
+
+.logout:hover {
+    border: 1px solid rgb(182, 155, 255);
+    background-color: #fff;
+    color: rgb(182, 155, 255);
+}
